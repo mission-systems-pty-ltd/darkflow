@@ -1,3 +1,8 @@
+# darkflow_ms
+Mission Systems fork of darkflow with added wrappers such as ```DarkflowModel.class``` and ```example_class_usage.py``` which effectively simplify the usage of the darkflow package into a single line function call for building the net and another line for inference on an OpenCV image or a Numpy array.
+
+### The remainder of this README is directly from the original repository https://github.com/thtrieu/darkflow/
+
 ## Intro
 
 [![Build Status](https://travis-ci.org/thtrieu/darkflow.svg?branch=master)](https://travis-ci.org/thtrieu/darkflow) [![codecov](https://codecov.io/gh/thtrieu/darkflow/branch/master/graph/badge.svg)](https://codecov.io/gh/thtrieu/darkflow)
