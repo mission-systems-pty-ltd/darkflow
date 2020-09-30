@@ -23,7 +23,7 @@ class DarkflowModel:
         self.model_pb = model_pb
         self.model_meta = model_meta
         self.use_pb_load = False
-        if model_pb is not None:
+        if model_pb is not None and model_meta is not None:
             weights_info = "Loading from protobuf file: " + str(self.model_pb)
             self.use_pb_load = True
         elif weights is not None:
@@ -35,13 +35,13 @@ class DarkflowModel:
         self.threshold = threshold
         self.gpu_usage = gpu_usage
         self.model = None
-        if construct:
-            self.construct()
         self.print_this("Loading from config file: " + str(self.model_config))
         self.print_this("Loading labels from: " + str(self.labels))
         self.print_this("Detection Threshold: " + str(self.threshold))
         self.print_this("GPU Usage: " + str(self.gpu_usage))
         self.print_this(weights_info)
+        if construct:
+            self.construct()
         self.print_this("INITIALIZATION COMPLETE")
 
     def load_id_dict(self, labels):
@@ -61,8 +61,8 @@ class DarkflowModel:
                 options = {
                     'model': self.model_config,
                     'labels': self.labels,
-                    'pbload': self.model_pb,
-                    'metaload': self.model_pb,
+                    'pbLoad': self.model_pb,
+                    'metaLoad': self.model_meta,
                     'threshold': self.threshold,
                     'gpu': self.gpu_usage
                 }
